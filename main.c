@@ -7,8 +7,8 @@
 int
 main(int argc, char **argv)
 {
-	//char *file = "../data/12x12_1.binoxxo";
-	char *file = "../data/14x14_veryhard_1.binoxxo";
+	//char *file = "./data/12x12_1.binoxxo";
+	char *file = "./data/14x14_veryhard_1.binoxxo";
 	
 	struct Bnx *b = bnx_read_file(file);
 	if (!b) {
