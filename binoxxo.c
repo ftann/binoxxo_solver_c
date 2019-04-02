@@ -70,17 +70,11 @@ bnx_alloc_cleanup:
 int
 bnx_get_random_field_value(void)
 {
-	// [M, N]
-	// M + rand() / (RAND_MAX / (N - M + 1) + 1)	
-	//return (enum BnxField)(rand() / (RAND_MAX / 2 + 1));
-	//return (enum BnxField)(rand() % 3 - 1);
-
 	if (rand() % 2) {
 		return BNX_FIELD_O;
 	} else {
 		return BNX_FIELD_X;
 	}
-
 }
 
 void

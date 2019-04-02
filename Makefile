@@ -7,6 +7,9 @@ LDFLAGS =
 
 all: $(PROGRAM)
 
+debug: CFLAGS += -g
+debug: $(PROGRAM)
+
 $(PROGRAM): .depend $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(PROGRAM)
 
