@@ -1,4 +1,4 @@
-PROGRAM = binoxxo
+PROGRAM = binoxxo.out
 C_FILES := $(wildcard *.c)
 OBJS := $(patsubst %.c, %.o, $(C_FILES))
 CC = cc
@@ -26,5 +26,5 @@ depend: .depend
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
-	@rm -f .depend *.o
+	@rm -f .depend *.o $(PROGRAM)
 

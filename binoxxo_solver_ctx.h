@@ -75,7 +75,7 @@ struct BnxSolverCtx {
 /// \param Guess map
 ///
 void
-bnx_update_guess_map(const struct Bnx const *, const struct Bnx const *);
+bnx_update_guess_map(const struct Bnx *, const struct Bnx *);
 
 ///
 /// \brief Allocate a solver context
