@@ -6,8 +6,14 @@
 int
 main(int argc, char **argv)
 {
-	//char *file = "./data/12x12_1.binoxxo";
-	char *file = "./data/14x14_veryhard_2.binoxxo";
+	// Determine unsolved binoxxo file
+	char *file;
+	if (argc == 1) {
+		//file = "./data/6x6_1.binoxxo";
+		file = "./data/14x14_veryhard_2.binoxxo";
+	} else if (argc >= 2) {
+		file = argv[1];
+	}
 
 	struct Bnx *b = bnx_read_file(file);
 	if (!b) {
@@ -21,9 +27,7 @@ main(int argc, char **argv)
 	struct BnxSolution *s =
 		bnx_solve(b, BNX_GUESS_TOPLEFT, BNX_SOLUTION_MODE_ALL);
 
-	if (!s) {
-		puts("No solution");
-	} else {
+	if (s) {
 		puts("Solved binoxxo:\n");
 
 		struct BnxSolution *ps = s;
@@ -31,7 +35,8 @@ main(int argc, char **argv)
 			bnx_print(ps->data);
 			ps = ps->next;
 		} while (ps);
-
+	} else {
+		puts("No solution");
 	}
 
 	bnx_solution_free(s);
