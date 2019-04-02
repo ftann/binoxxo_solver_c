@@ -2,7 +2,6 @@
 #include "binoxxo.h"
 #include "binoxxo_io.h"
 #include "binoxxo_solver.h"
-#include "test.h"
 
 int
 main(int argc, char **argv)
